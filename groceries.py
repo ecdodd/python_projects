@@ -27,3 +27,5 @@ print("--------------")
 print("THERE ARE " + str(len(products)) + " PRODUCTS:")
 
 # code.interact(local=locals())
+for product in products:
+    print(" + " + product ["name"])
