@@ -48,7 +48,7 @@ for product in products:
 
 departments = set(departments) # removing duplicate values
 departments = list(departments)
-departments = sorted(departments)
+#departments = sorted(departments)
 
 print("--------------")
 print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
