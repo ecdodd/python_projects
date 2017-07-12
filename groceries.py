@@ -1,5 +1,7 @@
+#PRODUCTS
+
 import code
-import operator
+import operator  # code.interact(local=locals())
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -24,15 +26,37 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ]
 
-print("--------------")
-print("THERE ARE " + str(len(products)) + " PRODUCTS:")
+# print("--------------")
+# print("THERE ARE " + str(len(products)) + " PRODUCTS:")
 
 
 products = sorted(products, key=operator.itemgetter("name"))
 
 
-for product in products:
-    price_usd = ' (${0:.2f})'.format(product["price"])
-    print(" + " + product["name"] + price_usd)
+#for product in products:
+#   price_usd = ' (${0:.2f})'.format(product["price"])
+#   print(" + " + product["name"] + price_usd)
 
-# code.interact(local=locals())
+#
+# DEPARTMENTS
+#
+
+departments = []
+
+for product in products:
+    departments.append(product["department"])
+
+departments = set(departments) # removing duplicate values
+departments = list(departments)
+departments = sorted(departments)
+
+print("--------------")
+print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
+
+def get_products(department_name):
+    return [product for product in products if product["department"] == department_name] # list comprehension for the win. so helpful.
+
+for department in departments:
+    department_products = get_products(department)
+    product_count = len(department_products)
+    print(" + " + department.title() + " (" + str(product_count) + " products)")
