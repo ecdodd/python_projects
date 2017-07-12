@@ -46,17 +46,17 @@ departments = []
 for product in products:
     departments.append(product["department"])
 
-departments = set(departments) # removing duplicate values
-departments = list(departments)
-departments = sorted(departments)
+#departments = set(departments) # removing duplicate values
+#departments = list(departments)
+#departments = sorted(departments)
 
 print("--------------")
 print("THERE ARE " + str(len(departments)) + " DEPARTMENTS:")
 
-def get_products(department_name):
-    return [product for product in products if product["department"] == department_name] # list comprehension for the win. so helpful.
+#def get_products(department_name):
+#    return [product for product in products if product["department"] == department_name] # list comprehension for the win. so helpful.
 
-for department in departments:
-    department_products = get_products(department)
-    product_count = len(department_products)
-    print(" + " + department.title() + " (" + str(product_count) + " products)")
+#for department in departments:
+#    department_products = get_products(department)
+#    product_count = len(department_products)
+#    print(" + " + department.title() + " (" + str(product_count) + " products)")
